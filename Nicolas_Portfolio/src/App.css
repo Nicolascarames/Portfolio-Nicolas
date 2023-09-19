@@ -1,0 +1,14 @@
+@font-face {
+  font-family: neon;
+  src: url(spaceFont.ttf);
+}
+
+@font-face {
+  font-family: monoton;
+  src: url(Monoton-Regular.ttf);
+}
+
+@font-face {
+  font-family: nixie;
+  src: url(NixieOne.ttf);
+}

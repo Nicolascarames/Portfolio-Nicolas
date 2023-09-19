@@ -1,0 +1,25 @@
+.about {
+  position: relative;
+  border: 1px solid rgba(245, 245, 245, 0.477);
+  border-radius: 15px;
+  box-shadow: 1px 1px 10px white;
+  padding: 1.5rem 2rem;
+  padding-top: 2.5rem;
+  width: 75%;
+  min-width: 360px;
+}
+
+.about p:first-child::before {
+  content: 'About';
+  position: absolute;
+  top: -45px;
+  left: 40px;
+  font-size: 3rem;
+  font-family: monoton;
+  color: rgb(0, 186, 124);
+}
+
+.about p {
+  font-family: nixie;
+  color: whitesmoke;
+}
