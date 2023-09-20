@@ -10,14 +10,13 @@ import marte from '../img/Mars.png'
 import pluton from '../img/pluton.png'
 import luna from '../img/moon_cartoon.png'
 import alien from '../img/alien.png'
-import rocket from '../img/roquetAstronaut.png'
+import rocket from '../img/cohete.png'
 import satelite from '../img/satelite.png'
 import drone from '../img/drone.png'
 // import comet from '../img/comet.png'
 // import zepelin from '../img/zepelin.png'
 import neptune from '../img/Neptune.png'
 import skillsBaloom from '../img/Skills.png'
-import astronautHome from '../img/astronaut home.png'
 import cartoonMars from '../img/CartoonMars.png'
 import { About } from './Components/About'
 import { Page1 } from './Components/Page1'
@@ -48,7 +47,7 @@ export default function App() {
           }}
         />
 
-        <ParallaxLayer offset={0.5} speed={2} style={{ pointerEvents: 'none' }}>
+        <ParallaxLayer offset={1} speed={2} style={{ pointerEvents: 'none' }}>
           {/* <img src={urls('satellite4')} style={{ width: '15%', marginLeft: '70%' }} /> */}
           <img
             src={skillsBaloom}
@@ -58,13 +57,16 @@ export default function App() {
 
         <ParallaxLayer offset={0.8} speed={0.1} style={{ opacity: 0.2 }}>
           <img src={luna} style={{ display: 'block', width: '20%', minWidth: '300px', marginLeft: '15%' }} />
-          <img src={pluton} style={{ display: 'block', width: '20%', minWidth: '150px', marginLeft: '55%' }} />
+          <img
+            src={pluton}
+            style={{ display: 'block', width: '20%', minWidth: '150px', marginLeft: '55%', marginTop: '40%' }}
+          />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.75} speed={0.1}>
+        <ParallaxLayer offset={3.2} speed={0.1}>
           <img
             src={marte}
-            style={{ display: 'block', width: '25%', minWidth: '300px', marginLeft: '20%', opacity: 0.3 }}
+            style={{ display: 'block', width: '10%', minWidth: '300px', marginLeft: '10%', opacity: 0.3 }}
           />
         </ParallaxLayer>
 
@@ -75,11 +77,14 @@ export default function App() {
           />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={3.8} speed={2} style={{ opacity: 0.9 }}>
-          <img src={rocket} style={{ display: 'block', width: '10%', minWidth: '80px', marginLeft: '10%' }} />
+        <ParallaxLayer offset={1.8} speed={-1} style={{ opacity: 0.9 }}>
+          <img
+            src={rocket}
+            style={{ display: 'block', width: '10%', minWidth: '80px', position: 'absolute', right: '10px' }}
+          />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.2} speed={-0.1} style={{ opacity: 0.6 }}>
+        <ParallaxLayer offset={3.2} speed={-0.1} style={{ opacity: 0.6 }}>
           <img src={alien} style={{ display: 'block', width: '10%', minWidth: '80px', marginLeft: '80%' }} />
         </ParallaxLayer>
 
@@ -198,7 +203,7 @@ export default function App() {
           }}
           onClick={() => parallax.current.scrollTo(0)}>
           <Card />
-          <img
+          {/* <img
             src={astronautHome}
             style={{
               // marginTop: '66%',
@@ -211,7 +216,7 @@ export default function App() {
               opacity: '0.9',
               position: 'fixed',
             }}
-          />
+          /> */}
         </ParallaxLayer>
       </Parallax>
     </div>
