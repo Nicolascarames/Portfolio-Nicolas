@@ -1,0 +1,20 @@
+.page4 {
+  font-family: nixie;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.page4 article {
+  border: 1px solid rgba(245, 245, 245, 0.477);
+  border-radius: 15px;
+  box-shadow: 1px 1px 10px white;
+  padding: 1.5rem 2rem;
+  width: 80%;
+}
+
+.page4 h4 {
+  color: whitesmoke;
+}

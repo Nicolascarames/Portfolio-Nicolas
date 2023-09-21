@@ -1,8 +1,8 @@
-import './about.css'
+import './page3.css'
 
-export const About = () => {
+export const Page3 = () => {
   return (
-    <div className="about">
+    <section className="about">
       <p>FullStack web developer, microcomputer systems and networks technician and junior QA tester.</p>
       <p>
         Passionate about technology and the new digital age. I love build and flying drones as much as I love
@@ -22,6 +22,6 @@ export const About = () => {
         So far I have learned that teamwork is the best way to grow with your colleagues, since in In this sector, every
         day you learn something new and meet new wonderful minds.
       </p>
-    </div>
+    </section>
   )
 }

@@ -2,7 +2,6 @@ import './App.css'
 import { useRef } from 'react'
 import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax'
 
-import { Card } from './Components/Card'
 import astronautDescargar from '../img/Descargar_astronaut.png'
 import fondoEspacio from '../img/Desktop.png'
 import tierra from '../img/Mapa_mundial.png'
@@ -18,8 +17,11 @@ import drone from '../img/drone.png'
 import neptune from '../img/Neptune.png'
 import skillsBaloom from '../img/Skills.png'
 import cartoonMars from '../img/CartoonMars.png'
-import { About } from './Components/About'
 import { Page1 } from './Components/Page1'
+import { Page2 } from './Components/Page2'
+import { Page3 } from './Components/Page3'
+import { Page4 } from './Components/Page4'
+import { Page5 } from './Components/Page5'
 
 // Little helpers ...
 // const urls = (name: string, wrap = false) =>
@@ -27,6 +29,9 @@ import { Page1 } from './Components/Page1'
 
 export default function App() {
   const parallax = useRef<IParallax>(null!)
+  const sizeVw = window.innerWidth
+  console.log(sizeVw)
+  const alto = sizeVw > 1000 ? 1.5 : 1.8
 
   return (
     <div style={{ width: '100vw', height: '100%', background: '#253237' }}>
@@ -47,11 +52,11 @@ export default function App() {
           }}
         />
 
-        <ParallaxLayer offset={1} speed={2} style={{ pointerEvents: 'none' }}>
+        <ParallaxLayer offset={alto} speed={2} style={{ pointerEvents: 'none' }}>
           {/* <img src={urls('satellite4')} style={{ width: '15%', marginLeft: '70%' }} /> */}
           <img
             src={skillsBaloom}
-            style={{ width: '35%', minWidth: '150px', maxWidth: '400px', marginLeft: '74%', opacity: '0.8' }}
+            style={{ width: '35%', minWidth: '150px', maxWidth: '400px', marginLeft: '25%', opacity: '0.8' }}
           />
         </ParallaxLayer>
 
@@ -77,7 +82,7 @@ export default function App() {
           />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.8} speed={-1} style={{ opacity: 0.9 }}>
+        <ParallaxLayer offset={1.9} speed={-1} style={{ opacity: 0.9 }}>
           <img
             src={rocket}
             style={{ display: 'block', width: '10%', minWidth: '80px', position: 'absolute', right: '10px' }}
@@ -98,7 +103,7 @@ export default function App() {
         <ParallaxLayer offset={4.1} speed={-0.1}>
           <img
             src={satelite}
-            style={{ display: 'block', width: '10%', minWidth: '80px', marginLeft: '25%', opacity: 0.5 }}
+            style={{ display: 'block', width: '10%', minWidth: '80px', marginLeft: '15%', opacity: 0.5 }}
           />
           {/* <img
             src={zepelin}
@@ -158,13 +163,25 @@ export default function App() {
         <ParallaxLayer
           offset={1}
           speed={0.1}
-          onClick={() => parallax.current.scrollTo(2)}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}>
-          <Card />
+          // onClick={() => parallax.current.scrollTo(2)}
+          style={
+            {
+              // display: 'flex',
+              // alignItems: 'center',
+              // justifyContent: 'center',
+            }
+          }>
+          <Page2 />
+          <div
+            onClick={() => parallax.current.scrollTo(2)}
+            style={{
+              position: 'absolute',
+              width: '13%',
+              height: '100%',
+              right: '0',
+              bottom: '0',
+              // backgroundColor: 'white',
+            }}></div>
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -177,19 +194,29 @@ export default function App() {
           }}
           onClick={() => parallax.current.scrollTo(3)}>
           {/* <img src={about} alt="about" style={{ display: 'block', width: '75%', minWidth: '390px' }} /> */}
-          <About />
+          <Page3 />
         </ParallaxLayer>
 
         <ParallaxLayer
           offset={3}
           speed={-0}
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-          onClick={() => parallax.current.scrollTo(4)}>
-          <Card />
+            // display: 'flex',
+            // alignItems: 'center',
+            // justifyContent: 'center',
+            width: '100%',
+          }}>
+          <Page4 />
+          <div
+            onClick={() => parallax.current.scrollTo(4)}
+            style={{
+              position: 'absolute',
+              width: '13%',
+              height: '100%',
+              right: '0',
+              bottom: '0',
+              // backgroundColor: 'white',
+            }}></div>
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -197,26 +224,22 @@ export default function App() {
           offset={4}
           speed={-0}
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-          onClick={() => parallax.current.scrollTo(0)}>
-          <Card />
-          {/* <img
-            src={astronautHome}
+            // display: 'flex',
+            // alignItems: 'center',
+            // justifyContent: 'center',
+            width: '100%',
+          }}>
+          <Page5 />
+          <div
+            onClick={() => parallax.current.scrollTo(0)}
             style={{
-              // marginTop: '66%',
-              // marginLeft: '80%',
-              bottom: '-55px',
+              position: 'absolute',
+              width: '13%',
+              height: '100%',
               right: '0',
-              width: '20%',
-              minWidth: '200px',
-              maxWidth: '350px',
-              opacity: '0.9',
-              position: 'fixed',
-            }}
-          /> */}
+              bottom: '0',
+              // backgroundColor: 'white',
+            }}></div>
         </ParallaxLayer>
       </Parallax>
     </div>

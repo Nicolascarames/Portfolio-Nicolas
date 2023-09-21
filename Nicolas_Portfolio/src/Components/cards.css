@@ -1,0 +1,126 @@
+.cardBox {
+  font-size: 1.2em;
+
+  perspective: 800px;
+  transition: all 0.3s ease 0s;
+  width: 20%;
+  min-width: 150px;
+  max-width: 250px;
+  height: 10%;
+  min-height: 100px;
+  max-height: 300px;
+}
+
+/* .cardBox:hover .card {
+  transform: rotateY(180deg);
+} */
+.cardBox .flip {
+  transform: rotateY(180deg);
+}
+
+.card {
+  cursor: default;
+  height: 300px;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease 0s;
+  width: 100%;
+  -webkit-animation: giro 1s 1;
+  animation: giro 1s 1;
+}
+
+.front,
+.back {
+  backface-visibility: hidden;
+  box-sizing: border-box;
+  color: white;
+  display: block;
+  font-size: 1.2em;
+  height: 100%;
+  padding: 0.8em;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+
+  border: 1px solid rgba(245, 245, 245, 0.477);
+  border-radius: 15px;
+  box-shadow: 1px 1px 10px white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.front strong {
+  align-self: flex-end;
+  font-size: 1rem;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.back h4 {
+  color: black;
+}
+
+.back p {
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.back a {
+  color: blue;
+  font-weight: bolder;
+  font-size: 1rem;
+}
+
+.cardBox:nth-child(1) .card .back {
+  background: #00a013;
+}
+
+.cardBox:nth-child(2) .card .back {
+  background: rgb(0, 185, 169);
+}
+
+.cardBox:nth-child(3) .card .back {
+  background: rgb(255, 213, 0);
+}
+
+.cardBox:nth-child(4) .card .back {
+  background: orangered;
+}
+
+.cardBox:nth-child(2) .card {
+  -webkit-animation: giro 1.5s 1;
+  animation: giro 1.5s 1;
+}
+
+.cardBox:nth-child(3) .card {
+  -webkit-animation: giro 2s 1;
+  animation: giro 2s 1;
+}
+
+.cardBox:nth-child(4) .card {
+  -webkit-animation: giro 2.5s 1;
+  animation: giro 2.5s 1;
+}
+
+@keyframes giro {
+  from {
+    transform: rotateY(180deg);
+  }
+  to {
+    transform: rotateY(0deg);
+  }
+}
+
+@-webkit-keyframes giro {
+  from {
+    transform: rotateY(180deg);
+  }
+  to {
+    transform: rotateY(0deg);
+  }
+}

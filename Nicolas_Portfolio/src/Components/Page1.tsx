@@ -1,4 +1,5 @@
 import './page1.css'
+import hi from '../../img/hi.png'
 
 export const Page1 = () => {
   // const handleClickScroll = () => {
@@ -11,9 +12,10 @@ export const Page1 = () => {
 
   return (
     <div className="page1">
-      <p>Hi, I'm Nico</p>
+      {/* <h1>Hi, I'm Nico</h1> */}
       {/* <Link activeClass="active" to="" spy={true} smooth={true} offset={-70} duration={500}></Link> */}
-      <p>Full stack developer</p>
+      {/* <h1>Full stack developer</h1> */}
+      <img src={hi} alt="hi" />
     </div>
   )
 }

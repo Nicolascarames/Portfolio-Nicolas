@@ -1,0 +1,38 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  gap: 1rem;
+  border: none;
+  font-family: nixie;
+}
+
+.form label {
+  color: whitesmoke;
+}
+
+.form input {
+  font-family: nixie;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 15px;
+}
+.form input:focus {
+  box-shadow: 0 0 25px whitesmoke;
+  border: none;
+}
+
+.form textarea {
+  font-family: nixie;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 15px;
+  height: 100px;
+}
+
+.form textarea:focus {
+  box-shadow: 0 0 15px whitesmoke;
+  border: none;
+}
