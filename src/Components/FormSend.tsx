@@ -7,10 +7,10 @@ export const Form = () => {
   const [email, setEmail] = useState('')
   const [text, setText] = useState('')
 
-  const sendEmail = e => {
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    emailjs.sendForm('service_04hqz4j', 'template_xo4j1zo', e.target, 'E1tmZ1daF97zo7GiL').then(
+    emailjs.sendForm('service_04hqz4j', 'template_xo4j1zo', e.currentTarget, 'E1tmZ1daF97zo7GiL').then(
       result => {
         setNombre('')
         setEmail('')
