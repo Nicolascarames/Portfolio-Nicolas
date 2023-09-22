@@ -13,9 +13,9 @@ export const Form = () => {
 
     emailjs.sendForm('service_04hqz4j', 'template_xo4j1zo', form.current, 'E1tmZ1daF97zo7GiL').then(
       result => {
-        setNombre('')
-        setEmail('')
-        setText('')
+        setNombre(nombre)
+        setEmail(email)
+        setText(text)
         console.log(result.text)
         alert('Email send, thanks!!')
       },
