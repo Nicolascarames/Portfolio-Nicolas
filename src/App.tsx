@@ -33,9 +33,40 @@ export default function App() {
   console.log(sizeVw)
   const alto = sizeVw > 1000 ? 1.5 : 1.8
 
+  const altos =
+    sizeVw > 1000
+      ? {
+          grande: true,
+          pages: 5,
+          factor: 5,
+          page2: 1,
+          page3: 2,
+          page4: 3,
+          page5: 4,
+          drone: 1.2,
+          descargar: 2,
+          marte: 3.2,
+          tierra: 2.5,
+          cartoonMars: 3.95,
+        }
+      : {
+          grande: false,
+          pages: 6,
+          factor: 6,
+          page2: 1.2,
+          page3: 2.4,
+          page4: 3.6,
+          page5: 4.8,
+          drone: 1.4,
+          descargar: 2.2,
+          marte: 4.3,
+          tierra: 3,
+          cartoonMars: 4.95,
+        }
+
   return (
     <div style={{ width: '100vw', height: '100%', background: '#253237' }}>
-      <Parallax ref={parallax} pages={5}>
+      <Parallax ref={parallax} pages={altos.pages}>
         {/* <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#805E73' }} />
         <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE' }} />
         <ParallaxLayer offset={3} speed={1} style={{ backgroundColor: '#87BCDE' }} />
@@ -45,7 +76,7 @@ export default function App() {
           className="fondo1"
           offset={0}
           speed={0}
-          factor={5}
+          factor={altos.factor}
           style={{
             backgroundImage: `url(${fondoEspacio})`,
             backgroundSize: 'cover',
@@ -68,14 +99,14 @@ export default function App() {
           />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={3.2} speed={0.1}>
+        <ParallaxLayer offset={altos.marte} speed={0.1}>
           <img
             src={marte}
-            style={{ display: 'block', width: '10%', minWidth: '300px', marginLeft: '10%', opacity: 0.3 }}
+            style={{ display: 'block', width: '10%', minWidth: '300px', marginLeft: '-40%', opacity: 0.3 }}
           />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.2} speed={-0.8}>
+        <ParallaxLayer offset={altos.drone} speed={-0.8}>
           <img
             src={drone}
             style={{ display: 'block', width: '10%', minWidth: '80px', marginLeft: '0%', opacity: 0.8 }}
@@ -111,7 +142,7 @@ export default function App() {
           /> */}
         </ParallaxLayer>
 
-        <ParallaxLayer offset={2} speed={0.4}>
+        <ParallaxLayer offset={altos.descargar} speed={0.4}>
           <img
             src={astronautDescargar}
             style={{ display: 'block', width: '20%', minWidth: '150px', marginLeft: '5%', opacity: '0.6' }}
@@ -126,7 +157,7 @@ export default function App() {
         </ParallaxLayer>
 
         <ParallaxLayer
-          offset={2.5}
+          offset={altos.tierra}
           speed={0.1}
           style={{
             display: 'flex',
@@ -137,7 +168,7 @@ export default function App() {
           <img src={tierra} style={{ width: '20%', minWidth: '300px', opacity: '0.6' }} />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={3.95} speed={0.1}>
+        <ParallaxLayer offset={altos.cartoonMars} speed={0.1}>
           <img
             src={cartoonMars}
             style={{ display: 'block', width: '25%', minWidth: '300px', marginLeft: '70%', opacity: 0.2 }}
@@ -147,7 +178,7 @@ export default function App() {
         <ParallaxLayer
           offset={0}
           speed={0.1}
-          onClick={() => parallax.current.scrollTo(1)}
+          onClick={() => parallax.current.scrollTo(altos.page2)}
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -161,7 +192,7 @@ export default function App() {
         </ParallaxLayer>
 
         <ParallaxLayer
-          offset={1}
+          offset={altos.page2}
           speed={0.1}
           // onClick={() => parallax.current.scrollTo(2)}
           style={
@@ -173,7 +204,7 @@ export default function App() {
           }>
           <Page2 />
           <div
-            onClick={() => parallax.current.scrollTo(2)}
+            onClick={() => parallax.current.scrollTo(altos.page3)}
             style={{
               position: 'absolute',
               width: '13%',
@@ -185,20 +216,20 @@ export default function App() {
         </ParallaxLayer>
 
         <ParallaxLayer
-          offset={2}
+          offset={altos.page3}
           speed={-0}
           style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
           }}
-          onClick={() => parallax.current.scrollTo(3)}>
+          onClick={() => parallax.current.scrollTo(altos.page4)}>
           {/* <img src={about} alt="about" style={{ display: 'block', width: '75%', minWidth: '390px' }} /> */}
           <Page3 />
         </ParallaxLayer>
 
         <ParallaxLayer
-          offset={3}
+          offset={altos.page4}
           speed={-0}
           style={{
             display: 'flex',
@@ -209,7 +240,7 @@ export default function App() {
           }}>
           <Page4 />
           <div
-            onClick={() => parallax.current.scrollTo(4)}
+            onClick={() => parallax.current.scrollTo(altos.page5)}
             style={{
               position: 'absolute',
               width: '13%',
@@ -222,7 +253,7 @@ export default function App() {
 
         <ParallaxLayer
           id="pagina5"
-          offset={4}
+          offset={altos.page5}
           speed={-0}
           style={{
             // display: 'flex',
@@ -242,6 +273,8 @@ export default function App() {
               // backgroundColor: 'white',
             }}></div>
         </ParallaxLayer>
+
+        <ParallaxLayer onClick={() => parallax.current.scrollTo(0)} offset={5}></ParallaxLayer>
       </Parallax>
     </div>
   )
