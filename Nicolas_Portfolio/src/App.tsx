@@ -201,9 +201,10 @@ export default function App() {
           offset={3}
           speed={-0}
           style={{
-            // display: 'flex',
-            // alignItems: 'center',
-            // justifyContent: 'center',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            margin: '0',
             width: '100%',
           }}>
           <Page4 />

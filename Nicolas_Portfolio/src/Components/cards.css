@@ -81,15 +81,15 @@
 }
 
 .cardBox:nth-child(2) .card .back {
-  background: rgb(0, 185, 169);
+  background: #00b9a9;
 }
 
 .cardBox:nth-child(3) .card .back {
-  background: rgb(255, 213, 0);
+  background: #ffd500;
 }
 
 .cardBox:nth-child(4) .card .back {
-  background: orangered;
+  background: #ff4500;
 }
 
 .cardBox:nth-child(2) .card {
