@@ -1,20 +1,24 @@
 import './form.css'
-import { useState } from 'react'
+import { createRef } from 'react'
 import emailjs from 'emailjs-com'
 
 export const Form = () => {
-  const [nombre, setNombre] = useState('')
-  const [email, setEmail] = useState('')
-  const [text, setText] = useState('')
+  // const [nombre, setNombre] = useState('')
+  // const [email, setEmail] = useState('')
+  // const [text, setText] = useState('')
+  const form = createRef<HTMLFormElement>()
 
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    emailjs.sendForm('service_04hqz4j', 'template_xo4j1zo', e.currentTarget, 'E1tmZ1daF97zo7GiL').then(
+    await emailjs.sendForm('service_04hqz4j', 'template_xo4j1zo', e.currentTarget, 'E1tmZ1daF97zo7GiL').then(
       result => {
-        setNombre('')
-        setEmail('')
-        setText('')
+        // setNombre('')
+        // setEmail('')
+        // setText('')
+        if (form.current) {
+          form.current.reset()
+        }
         console.log(result.text)
         alert('Email send, thanks!!')
       },
@@ -25,13 +29,13 @@ export const Form = () => {
   }
 
   return (
-    <form className="form" onSubmit={sendEmail}>
+    <form ref={form} className="form" onSubmit={sendEmail}>
       <label>Send me an email:</label>
-      <input value={nombre} placeholder="Name" type="text" name="user_name" />
+      <input placeholder="Name" type="text" name="user_name" required />
 
-      <input value={email} placeholder="Email" type="email" name="user_email" />
+      <input placeholder="Email" type="email" name="user_email" required />
 
-      <textarea value={text} placeholder="Message" name="message" />
+      <textarea placeholder="Message" name="message" required />
       <input type="submit" value="Send" />
     </form>
   )

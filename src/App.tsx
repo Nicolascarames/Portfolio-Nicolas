@@ -30,8 +30,6 @@ import { Page5 } from './Components/Page5'
 export default function App() {
   const parallax = useRef<IParallax>(null!)
   const sizeVw = window.innerWidth
-  console.log(sizeVw)
-  const alto = sizeVw > 1000 ? 1.5 : 1.8
 
   const altos =
     sizeVw > 1000
@@ -48,6 +46,8 @@ export default function App() {
           marte: 3.2,
           tierra: 2.5,
           cartoonMars: 3.95,
+          globos: 1.5,
+          satelite: 4.1,
         }
       : {
           grande: false,
@@ -56,12 +56,14 @@ export default function App() {
           page2: 1.2,
           page3: 2.4,
           page4: 3.6,
-          page5: 4.8,
+          page5: 5,
           drone: 1.4,
           descargar: 2.2,
           marte: 4.3,
           tierra: 3,
           cartoonMars: 4.95,
+          globos: 1.2,
+          satelite: 4.7,
         }
 
   return (
@@ -83,11 +85,11 @@ export default function App() {
           }}
         />
 
-        <ParallaxLayer offset={alto} speed={2} style={{ pointerEvents: 'none' }}>
+        <ParallaxLayer offset={altos.globos} speed={2} style={{ pointerEvents: 'none' }}>
           {/* <img src={urls('satellite4')} style={{ width: '15%', marginLeft: '70%' }} /> */}
           <img
             src={skillsBaloom}
-            style={{ width: '35%', minWidth: '150px', maxWidth: '400px', marginLeft: '25%', opacity: '0.8' }}
+            style={{ width: '35%', minWidth: '150px', maxWidth: '400px', marginLeft: '25%', opacity: '1' }}
           />
         </ParallaxLayer>
 
@@ -131,7 +133,7 @@ export default function App() {
           /> */}
         </ParallaxLayer>
 
-        <ParallaxLayer offset={4.1} speed={-0.1}>
+        <ParallaxLayer offset={altos.satelite} speed={-0.1}>
           <img
             src={satelite}
             style={{ display: 'block', width: '10%', minWidth: '80px', marginLeft: '15%', opacity: 0.5 }}
@@ -274,7 +276,7 @@ export default function App() {
             }}></div>
         </ParallaxLayer>
 
-        <ParallaxLayer onClick={() => parallax.current.scrollTo(0)} offset={5}></ParallaxLayer>
+        {/* <ParallaxLayer onClick={() => parallax.current.scrollTo(0)} offset={5}></ParallaxLayer> */}
       </Parallax>
     </div>
   )
