@@ -23,7 +23,9 @@ export const Cards = () => {
           <div className="back">
             <h4>API with NodeJS</h4>
             <p>Can make the calls you want to save users, comments, or photos</p>
-            <a href="#">Visit web</a>
+            <a target="blank" href="https://api1.naviwarrior.es/">
+              Visit web
+            </a>
           </div>
         </div>
       </div>
@@ -32,12 +34,15 @@ export const Cards = () => {
         <div className={vuelta1 ? 'card' : 'card flip'}>
           <div className="front">
             <img src={bombilla} alt="logo" style={{ width: '80%' }} />
+            <p style={{ color: 'red', fontSize: '.8rem' }}>in maintenance</p>
             <strong>Flip</strong>
           </div>
           <div className="back">
             <h4>Forum on technological questions</h4>
             <p>Front with React and CSS, where you can resolve your doubts</p>
-            <a href="#">Visit web</a>
+            <a target="blank" href="https://whatswrong.naviwarrior.es/">
+              Visit web
+            </a>
           </div>
         </div>
       </div>
@@ -52,7 +57,9 @@ export const Cards = () => {
           <div className="back">
             <h4>Exercise your mind</h4>
             <p>Mythical couples game to develop your mind, with pure JS</p>
-            <a href="#">Visit web</a>
+            <a target="blank" href="https://juegoemojis.naviwarrior.es/">
+              Visit web
+            </a>
           </div>
         </div>
       </div>
@@ -67,7 +74,9 @@ export const Cards = () => {
           <div className="back">
             <h4>Social network, Banana</h4>
             <p>Share your life on this private social network</p>
-            <a href="#">Visit web</a>
+            <a target="blank" href="https://pagina.naviwarrior.es/">
+              Visit web
+            </a>
           </div>
         </div>
       </div>
